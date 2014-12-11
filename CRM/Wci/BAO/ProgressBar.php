@@ -70,7 +70,7 @@ class CRM_Wci_BAO_ProgressBar extends CRM_Wci_DAO_ProgressBar {
         CRM_Core_DAO::storeValues($daoPbf, $for_page[$daoPbf->id]);
         $px = $for_page[$daoPbf->id]['percentage'];
 
-        $query = "SELECT * FROM civicrm_contribution where contribution_page_id =" . $for_page[$daoPbf->id]['contribution_page_id'];
+        $query = "SELECT * FROM civicrm_contribution where receive_date >= '2014-11-15' AND contribution_page_id =" . $for_page[$daoPbf->id]['contribution_page_id'];
         $params = array();
 
         $daoCon = CRM_Core_DAO::executeQuery($query, $params, TRUE, 'CRM_Contribute_DAO_Contribution');
